@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using HarryPotter.Models;
+using HarryPotter.Models.Interfaces;
 
 namespace HarryPotter.Controllers
 {
@@ -13,9 +14,12 @@ namespace HarryPotter.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private ISortingHat _sortingHat;
+
+        public HomeController(ILogger<HomeController> logger, ISortingHat sortingHat)
         {
             _logger = logger;
+            _sortingHat = sortingHat;
         }
 
         public IActionResult Index()
