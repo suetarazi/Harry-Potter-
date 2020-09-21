@@ -22,6 +22,7 @@ namespace HarryPotter.Controllers
             _sortingHat = sortingHat;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
