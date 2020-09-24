@@ -7,6 +7,6 @@ namespace HarryPotter.Models.Interfaces
 {
     public interface ISortingHat
     {
-        public Task<string> SortingHatOutcome();
+        public Task<SortingHat> SortingHatOutcome();
     }
 }
