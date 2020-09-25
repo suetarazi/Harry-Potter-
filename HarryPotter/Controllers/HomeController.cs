@@ -22,12 +22,7 @@ namespace HarryPotter.Controllers
             return View();
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Index(string submit)
-        {
-            SortingHat sorting = await _sortingHat.SortingHatOutcome();
-            return View(sorting);
         
-        }
+        
     }
 }
