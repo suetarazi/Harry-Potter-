@@ -23,14 +23,5 @@ namespace HarryPotter.Pages
 
         }
 
-        public void OnPost()
-        {
-            async Task<IActionResult> Index(string submit)
-            {
-                SortingHat sorting = await _sortingHat.SortingHatOutcome();
-                return Page();
-
-            }
-        }
     }
 }

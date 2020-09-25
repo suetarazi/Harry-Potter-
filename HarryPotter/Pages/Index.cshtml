@@ -1,11 +1,25 @@
 ﻿@page
 @model HarryPotter.Pages.IndexModel
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = "_Layout";
+    <link rel="stylesheet" href="~/css/site.css" />
 
 }
 
-<form method="post">
-    <label>Sorting Hat</label>
-    <button type="submit">Sort Me Into A House</button>
-</form>
+<div class="text-center">
+    <h1 class="display-4">Harry Potter - UNDER CONSTRUCTION</h1>
+    <img src="https://i.imgur.com/GNtAFrh.jpeg" width="1000" />
+
+</div>
+
+<section>
+    <form method="post" asp-page="/Results/Results">
+        <div>
+            @*question: does this need <label asp-for="@Model.blahblah"></label>*@
+            <label>Sorting Hat</label>
+            <img src="https://i.imgur.com/o0HDcDc.png" />
+            <button type="submit">Sort Me Into A House</button>
+        </div>
+    </form>
+</section>

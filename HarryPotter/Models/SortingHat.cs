@@ -9,7 +9,7 @@ namespace HarryPotter.Models
 {
     public class SortingHat
     {
-        [JsonProperty(" ")]
+        [JsonPropertyName(" ")]
         public string HouseName { get; set; }
     }
 }
