@@ -28,7 +28,7 @@ namespace HarryPotter.Pages.Results
         {
             async Task<IActionResult> Index()
             {
-                SortingHat sorting = await _sortingHat.SortingHatOutcome();
+                sorting = await _sortingHat.SortingHatOutcome();
                 return Page();
 
             }
