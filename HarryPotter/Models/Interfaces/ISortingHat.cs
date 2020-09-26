@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace HarryPotter.Models.Interfaces
 {
-    interface ISortingHat
+    public interface ISortingHat
     {
-        public Task SortingHatOutcome();
+        public Task<SortingHat> SortingHatOutcome();
     }
 }
