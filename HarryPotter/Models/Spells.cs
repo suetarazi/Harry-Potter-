@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace HarryPotter.Models
 {
+
+    //This model is using API: https://www.potterapi.com/v1/spells?key=$2a$10$mXNDWGOV/EgyBtX7QKYvi.zke0orbvTth6rqJMnLJPjvsiNWWu5S.
     public class Spells
     {
         [JsonPropertyName("_id")]
