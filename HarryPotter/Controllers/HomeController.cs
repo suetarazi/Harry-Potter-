@@ -3,28 +3,36 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using HarryPotter.Models;
 using HarryPotter.Models.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
 
 namespace HarryPotter.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ISortingHat _sortingHat;
+        private readonly ISpells _spells;
 
-        public HomeController(ILogger<HomeController> logger, ISortingHat sortingHat)
+        public List<Spells> Spells { get; set; }
+
+        public HomeController(ILogger<HomeController> logger, ISpells spells)
         {
             _logger = logger;
-            _sortingHat = sortingHat;
+            _spells = spells;
         }
 
-        public IActionResult Index()
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        [HttpGet]
+        public async Task<List<IActionResult>> Index()
         {
-            return View();
+            Spells = await _spells.GetAllSpells();
+            return View(Spells); ;
         }
 
         public IActionResult Privacy()
