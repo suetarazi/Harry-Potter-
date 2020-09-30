@@ -5,4 +5,9 @@
     <UserSecretsId>66476d1f-8619-4211-88bb-b921475e1a48</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="microsoft.aspnet.razor" Version="3.2.7" />
+    <PackageReference Include="microsoft.aspnetcore.mvc.taghelpers" Version="2.2.0" />
+  </ItemGroup>
+
 </Project>
