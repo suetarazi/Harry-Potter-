@@ -6,22 +6,33 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using HarryPotter.Models;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+using HarryPotter.Models.Interfaces;
 
 namespace HarryPotter.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ISpells _spells;
 
-        public HomeController(ILogger<HomeController> logger)
+        public List<Spells> Spells { get; set; }
+
+        public HomeController(ILogger<HomeController> logger, ISpells spells)
         {
             _logger = logger;
+            _spells = spells;
         }
 
-        public IActionResult Index()
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        [HttpGet]
+        public async Task<List<IActionResult>> Index()
         {
-            return View();
+            Spells = await _spells.GetAllSpells();
+            return View(Spells); ;
         }
 
         public IActionResult Privacy()
